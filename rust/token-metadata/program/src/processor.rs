@@ -34,9 +34,9 @@ use solana_program::{
 };
 use spl_token::state::{Account, Mint};
 
-pub fn process_instruction<'a>(
-    program_id: &'a Pubkey,
-    accounts: &'a [AccountInfo<'a>],
+pub fn process_instruction(
+    program_id: &Pubkey,
+    accounts: &[AccountInfo],
     input: &[u8],
 ) -> ProgramResult {
     let instruction = MetadataInstruction::try_from_slice(input)?;
